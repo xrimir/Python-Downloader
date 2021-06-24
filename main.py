@@ -3,6 +3,7 @@ import validators
 import PySimpleGUI as sg
 import requests
 import time
+import mimetypes
 
 col = [
     [sg.Text('Url: '), sg.Input(key="urlInput")],
@@ -32,10 +33,8 @@ def clearInputFields():
 
 
 def createFilename(name, httpContentType):
-    fileExtension = httpContentType.split('/')[-1]
-    if fileExtension == "jpeg":
-        fileExtension = "jpg"
-    elif fileExtension == "x-zip-compressed":
+    fileExtension = mimetypes.guess_extension(httpContentType)
+    if httpContentType == "application/x-zip-compressed":
         fileExtension = "zip"
     return f"{name}.{fileExtension}"
 
