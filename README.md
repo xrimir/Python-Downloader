@@ -1,6 +1,6 @@
 Python-Downloader
 
-Very basic python downloader. It *SHOULD* support various files.
+Very basic python downloader. It **SHOULD** support various files.
 
 Deps:
   >threading
