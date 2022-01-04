@@ -1,4 +1,5 @@
 ## Python-Downloader
+Dependencies:
 - threading
 - validators
 - PySimpleGUI
